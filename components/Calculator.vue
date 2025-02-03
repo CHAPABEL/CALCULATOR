@@ -1,0 +1,143 @@
+<script setup>
+i;
+const arrayButtons = [
+  {
+    label: "AC",
+    value: "AC",
+    class:
+      "text-blue-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "C",
+    value: "C",
+    class:
+      "text-blue-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "%",
+    value: "%",
+    class:
+      "text-blue-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "/",
+    value: "/",
+    class:
+      "text-red-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "7",
+    value: "7",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "8",
+    value: "8",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "9",
+    value: "9",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "X",
+    value: "X",
+    class:
+      "text-red-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "4",
+    value: "4",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "5",
+    value: "5",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "6",
+    value: "6",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "-",
+    value: "-",
+    class:
+      "text-red-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "1",
+    value: "1",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "2",
+    value: "2",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "3",
+    value: "3",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "+",
+    value: "+",
+    class:
+      "text-red-400 text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "0",
+    value: "0",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 col-span-2 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: ".",
+    value: ".",
+    class:
+      "text-white text-2xl rounded-xl bg-zinc-700 transition duration-200 ease-in-out active:border-2 border-gray-600 hover:scale-[102%] hover:shadow-2xl",
+  },
+  {
+    label: "=",
+    value: "=",
+    class:
+      "bg-orange-600 text-white text-2xl rounded-xl transition duration-200 ease-in-out active:border-2 border-gray-700 hover:scale-[102%] hover:shadow-2xl",
+  },
+];
+</script>
+<template>
+  <section
+    class="bg-zinc-800 flex flex-col items-center w-[35%] shadow-2xl rounded-xl ml-auto mr-auto pt-20"
+  >
+    <div
+      class="flex text-5xl text-white h-24 items-center justify-end pr-6 w-full"
+    >
+      {{ display || "0" }}
+    </div>
+
+    <div
+      class="grid grid-cols-[100px,100px,100px,100px,] pmt-2 pr-1 pl-1 pb-8 grid-rows-[75px,75px,75px,75px,75px] gap-5"
+    >
+      <button
+        v-for="button in arrayButtons"
+        :key="button.value"
+        :class="button.class"
+        @click="handleButtonClick(button.value)"
+      >
+        {{ button.label }}
+      </button>
+    </div>
+  </section>
+</template>
