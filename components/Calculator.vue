@@ -148,8 +148,15 @@ function appendNumber(value) {
   }
 }
 
+function addOperator(operator) {
+  if (["+", "-", "*", "/"].includes(display.value.slice(-1))) {
+    display.value = display.value.slice(0, -1);
+  }
+  display.value += operator;
+}
+
 function calculateRes() {
-  button.value = eval(display.value).toString();
+  display.value = eval(display.value).toString();
 }
 </script>
 
