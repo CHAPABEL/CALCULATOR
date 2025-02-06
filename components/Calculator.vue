@@ -139,6 +139,18 @@ const arrayButtons = [
       "bg-orange-600 text-white text-2xl rounded-xl transition duration-200 ease-in-out active:border-2 border-gray-700 hover:scale-[102%] hover:shadow-2xl",
   },
 ];
+
+function appendNumber(value) {
+  if (display.value == "0") {
+    display.value = value;
+  } else {
+    display.value += value;
+  }
+}
+
+function calculateRes() {
+  button.value = eval(display.value).toString();
+}
 </script>
 
 <template>
@@ -157,7 +169,7 @@ const arrayButtons = [
         v-for="button in arrayButtons"
         :key="button.value"
         :class="button.class"
-        @click="handleButtonClick(button.action)"
+        @click="button.action"
       >
         {{ button.label }}
       </button>
